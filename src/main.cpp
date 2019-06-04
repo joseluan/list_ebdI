@@ -1,8 +1,9 @@
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
-namespace ls{
+namespace sc{
 
 template<typename T>
 class list {
@@ -23,6 +24,47 @@ class list {
 		};
 
 	public:
+		class iterator{
+			public:
+				iterator(): current(nullptr){}
+				
+				iterator(Node * p) : current(p){};
+				
+				Node& operator* ( ){
+					return *current;
+				}
+
+				iterator & operator++(){ 
+					current = current->next;
+					return iterator(current);
+				} //++it
+				
+				iterator & operator++(int){ 
+					current = current->next;
+					return iterator(current->prev);
+				} //it++
+
+				iterator & operator--(){ return current->prev; } //--it
+				
+				iterator & operator--(int){ //t--
+					Node * temp = current;
+					current = current->prev;
+					return temp;
+				} //it++
+
+				bool operator==(iterator & rhs){
+					return this->data == rhs->data;
+				}
+
+				bool operator!=(iterator & rhs){
+					return this->data != rhs->data;
+				}
+
+
+			protected:	
+				Node * current;
+		};
+
 		class const_iterator{
 			public:
 				const_iterator(): current(nullptr){}
@@ -62,7 +104,6 @@ class list {
 
 			protected:	
 				Node * current;
-				//friend class List<Object> lista;
 		};
 
 		// [I] membros especiais
@@ -94,28 +135,34 @@ class list {
 		};
 
 		list & operator=(const list& lista){
-			
+			m_head = lista.m_head;
+			m_field = lista.m_field;
+			m_size = lista.m_size;
 			return *this;
 		}
 
 		// fim [I]
 		// [II] Iterators
+		iterator begin(){
+			iterator ci(m_head);
+			return ci;
+		}
+
 		const_iterator cbegin() const{
 			const_iterator ci(m_head);
 			return ci;
 		}
 
-		const_iterator cend() const{
-			const_iterator ci(m_head);
-			int cont = 0;
-
-			while(cont <= m_size-1){
-				ci++;
-				cont++;
-			}
-
+		iterator end(){
+			iterator ci(m_field);
 			return ci;
 		}
+
+		const_iterator cend() const{
+			const_iterator ci(m_field);
+			return ci;
+		}
+
 		// fim [II]
 		// [III] Capacity
 		int size() const{
@@ -128,7 +175,7 @@ class list {
 		// fim [III]
 		// [IV] Modifiers
 		void clear(){
-			if(m_head == nullptr) return 0;
+			if(m_head == nullptr) return;
 			Node * temp = m_head;
 			while(temp != m_field){
 				delete temp;
@@ -150,42 +197,73 @@ class list {
 				return m_field->data;
 		}
 
-		void push_front(const T & value){
-			Node * n;
-			Node * temp = m_head;
-			n->data = value;
-			n->next = temp;
-			n->prev = nullptr;
-			m_head = n;
-			//cout << (temp->next) << endl;
+		void push_back(const T & value){
+			Node * temp = new Node(value, m_field);
+			m_field = temp;
+			if(m_head == nullptr)
+				m_head = temp;
+			m_size++;
 		}
 
-		void push_back(const T & value){
-			Node * n;
-			n->data = value;
-			//n->next = nullptr;
-			//n->prev = m_field;
-			//m_field->next = n;
-			//m_field = n;
-			//m_size += 1;
+		void push_front(const T & value){
+			Node * temp = new Node(value, nullptr, m_head);
+			m_head->prev = temp;
+			m_head = temp;
+ 			if(m_field == nullptr)
+				m_field = temp;
+			m_size++;
 		}
-		
+
 		void pop_front(){
-			Node * n = m_head;
-			m_head = n->next;
-			//delete n; //estar dando erro (falha de segmentação)
-			m_size -= 1;
+			if(m_head == nullptr) return;
+			Node * temp = m_head->next;
+			//delete m_head; //por forças do além o delete não estar funcionando
+			m_head = temp;
 		}
 
 		void pop_back(){
-			Node * n = m_field;
-			m_field = n->prev;
-			//delete n; //estar dando erro (falha de segmentação)
-			m_size -= 1;
+			if(m_head == nullptr) return;
+			Node * temp = m_field->prev;
+			//delete m_field; //por forças do além o delete não estar funcionando
+			m_field = temp;
 		}
+		
 
 		// fim [IV]
+		// [V] modificadores com iterators
+		
+		/*void assign(iterator first, iterator last){
+			clear();
+			m_head = first.current;
+			m_field = last.current;
+			int size = 1;
+			while(first != last){
+				first++;
+				size++;
+			}
+			m_size = size;
+		}*/
 
+		void assign( std::initializer_list<T> ilist ){
+			//clear();
+			list<T> lista{};
+			for (T it : ilist){
+				lista.push_back(it);
+			}
+
+			*this = lista;
+		}
+			
+		const_iterator find(const T & value) const{
+			if(m_head->data == value) return const_iterator(m_head);
+			Node * temp = m_head->next;
+			while(temp != nullptr){
+				if(temp->data == value) return const_iterator(temp);
+				temp = temp->next;
+			}
+			return nullptr;
+		}
+		// fim [V]
 	private: 
 		int m_size;
 		Node * m_head;
@@ -195,17 +273,12 @@ class list {
 
 int main(int argc, char const *argv[]){
 	
-	ls::list<int> lista = ls::list<int>();
-	//ls::list<int> lista2(lista);
-	
-	lista.push_front(56);
-	//lista.push_back(78);
-	//lista.push_front(14);
-
-	//lista.pop_back();
-
-	//cout << lista.back() << endl;
-	cout << lista.front() << endl;
+	sc::list<int> lista{};
+	lista.push_back(56);
+	lista.push_front(132);
+	lista.assign({1, 2, 3});
+	lista.find(2);
+	cout << (*(lista.find(3))).data << endl; 
 	
 	return 0;
 }
