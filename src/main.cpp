@@ -16,11 +16,6 @@ class list {
 			//<! Contrutor basico
 			Node(const T & d = T(), Node * p = nullptr, Node * n = nullptr)
 				: data(d), prev(p), next(n) {}
-			~Node(){
-				delete &data;
-				delete prev;
-				delete next;
-			}
 		};
 
 	public:
@@ -101,10 +96,23 @@ class list {
 					return this->data != rhs->data;
 				}
 
-
 			protected:	
 				Node * current;
 		};
+
+		// [IV] modificadores
+		void clear(){
+			if(m_head == nullptr) return;
+			Node * temp = m_head;
+			while(temp != m_field){
+				delete temp;
+				temp = m_head->next;
+			}
+
+			m_head = nullptr;
+			m_field = nullptr;
+			m_size = 0;
+		}
 
 		// [I] membros especiais
 		list(): m_size(0), m_head(nullptr), m_field(nullptr){}
@@ -113,25 +121,9 @@ class list {
 		}
 
 		list(const list<T> & lista): m_size(lista.m_size){
-			Node * temp = m_head;
-			Node * temp2 = m_field;
-			/*
-			while(m_head != m_field){
-				delete m_head;
-				delete m_field;
-
-				m_head = temp;
-				m_field = temp2;
-
-				temp = m_head->next;
-				temp2 = m_field->prev;
-			}
-
-			delete m_field;
-
+			clear();
 			m_head = lista.m_head;
 			m_field = lista.m_field;
-			*/
 		};
 
 		list & operator=(const list& lista){
@@ -174,18 +166,6 @@ class list {
 		}
 		// fim [III]
 		// [IV] Modifiers
-		void clear(){
-			if(m_head == nullptr) return;
-			Node * temp = m_head;
-			while(temp != m_field){
-				delete temp;
-				temp = m_head->next;
-			}
-
-			m_head = nullptr;
-			m_field = nullptr;
-			m_size = 0;
-		}
 		
 		T & front(){
 			if(m_head != nullptr)
@@ -217,14 +197,14 @@ class list {
 		void pop_front(){
 			if(m_head == nullptr) return;
 			Node * temp = m_head->next;
-			//delete m_head; //por forças do além o delete não estar funcionando
+			delete m_head; //por forças do além o delete não estar funcionando
 			m_head = temp;
 		}
 
 		void pop_back(){
 			if(m_head == nullptr) return;
 			Node * temp = m_field->prev;
-			//delete m_field; //por forças do além o delete não estar funcionando
+			delete m_field; //por forças do além o delete não estar funcionando
 			m_field = temp;
 		}
 		
@@ -276,9 +256,10 @@ int main(int argc, char const *argv[]){
 	sc::list<int> lista{};
 	lista.push_back(56);
 	lista.push_front(132);
-	lista.assign({1, 2, 3});
-	lista.find(2);
-	cout << (*(lista.find(3))).data << endl; 
+	
+	sc::list<int> lista2{lista};
+	//lista.clear();
+	cout <<  " = " << lista2.front() << endl; 
 	
 	return 0;
 }
