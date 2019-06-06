@@ -31,15 +31,19 @@ class list {
 
 				iterator & operator++(){ 
 					current = current->next;
-					return iterator(current);
+					return *this;
 				} //++it
 				
 				iterator & operator++(int){ 
+					iterator * temp = this; 
 					current = current->next;
-					return iterator(current->prev);
+					return *temp;
 				} //it++
 
-				iterator & operator--(){ return current->prev; } //--it
+				iterator & operator--(){ 
+					current = current->prev;
+					return *this;
+				} //--it
 				
 				iterator & operator--(int){ //t--
 					Node * temp = current;
@@ -47,12 +51,12 @@ class list {
 					return temp;
 				} //it++
 
-				bool operator==(iterator & rhs){
-					return current->data == rhs->data;
+				bool operator==(iterator rhs){
+					return current->data == (rhs.current)->data;
 				}
 
-				bool operator!=(iterator & rhs){
-					return current->data != rhs->data;
+				bool operator!=(iterator rhs){
+					return current->data != (rhs.current)->data;
 				}
 
 
@@ -63,37 +67,40 @@ class list {
 		class const_iterator{
 			public:
 				const_iterator(): current(nullptr){}
-				
 				const_iterator(Node * p) : current(p){};
-				
+							
 				const Node& operator* ( ) const{
 					return *current;
 				}
 
 				const_iterator & operator++(){ 
 					current = current->next;
-					return const_iterator(current);
+					return *this;
 				} //++it
 				
-				const_iterator & operator++(int){ 
+				const_iterator & operator++(int){
+					const_iterator * temp = this; 
 					current = current->next;
-					return const_iterator(current->prev);
+					return *temp;
 				} //it++
 
-				const_iterator & operator--(){ return current->prev; } //--it
+				const_iterator & operator--(){ 
+					current = current->prev;
+					return *this;
+				} //--it
 				
 				const_iterator & operator--(int){ //t--
-					Node * temp = current;
+					const_iterator * temp = this; 
 					current = current->prev;
-					return temp;
+					return *temp;
 				} //it++
 
-				bool operator==(const const_iterator & rhs) const{
-					return this->data == rhs->data;
+				bool operator==(const const_iterator rhs) const{
+					return current->data == (rhs.current)->data;
 				}
 
-				bool operator!=(const const_iterator & rhs) const{
-					return this->data != rhs->data;
+				bool operator!=(const const_iterator rhs) const{
+					return current->data != (rhs.current)->data;
 				}
 
 			protected:	
@@ -209,7 +216,53 @@ class list {
 
 			*this = lista;
 		}
-			
+
+		void assign(const T& value){
+			clear();
+			push_back(value);
+		}
+		
+		iterator erase(iterator itr){
+			if(itr == begin()){
+				pop_front();
+				return begin();
+			}else if(itr == end()){
+				pop_back();
+				return end();
+			}
+
+			iterator temp = itr;
+			iterator temp_n = ++itr;
+			iterator temp_p = --itr;
+
+			delete &(*temp);
+
+			(*temp_p).next = &(*temp_n);
+			(*temp_n).prev = &(*temp_p);
+			return temp_p;
+		}
+
+		iterator erase(iterator first, iterator last){
+			if(first == begin() && last == end()){
+				clear();
+				return first;
+			}
+
+			iterator temp = first;
+			iterator temp_n = ++first;
+			iterator temp_p = --first;
+			//apagando os iterators
+			while(temp_n != last){
+				delete &(*temp);
+				temp = temp_n;
+				temp_n = temp_n++;
+			}
+
+			(*temp_p).next = &(*temp_n);
+			(*temp_n).prev = &(*temp_p);
+			return temp_p;
+		}
+
 		const_iterator find(const T & value) const{
 			if(m_head->data == value) return const_iterator(m_head);
 			Node * temp = m_head->next;
@@ -219,6 +272,7 @@ class list {
 			}
 			return nullptr;
 		}
+
 		// fim [V]
 
 		// [I] membros especiais
@@ -245,6 +299,7 @@ class list {
 				it= it->next;
 			}
 			m_field = it;
+			return *this;
 		}
 
 		// fim [I]
@@ -263,9 +318,11 @@ int main(int argc, char const *argv[]){
 	
 	sc::list<int> lista2{};
 	
-	lista2.assign(lista.begin(), lista.end());
+	
 
-	cout <<  " = " << lista2.front() << endl; 
+	lista.erase(lista.begin(), lista.end());
+
+	cout <<  " = " << lista.back() << endl; 
 	
 	return 0;
 }
