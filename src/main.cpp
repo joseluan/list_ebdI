@@ -48,11 +48,11 @@ class list {
 				} //it++
 
 				bool operator==(iterator & rhs){
-					return this->data == rhs->data;
+					return current->data == rhs->data;
 				}
 
 				bool operator!=(iterator & rhs){
-					return this->data != rhs->data;
+					return current->data != rhs->data;
 				}
 
 
@@ -100,40 +100,6 @@ class list {
 				Node * current;
 		};
 
-		// [IV] modificadores
-		void clear(){
-			if(m_head == nullptr) return;
-			Node * temp = m_head;
-			while(temp != m_field){
-				delete temp;
-				temp = m_head->next;
-			}
-
-			m_head = nullptr;
-			m_field = nullptr;
-			m_size = 0;
-		}
-
-		// [I] membros especiais
-		list(): m_size(0), m_head(nullptr), m_field(nullptr){}
-		~list(){
-			
-		}
-
-		list(const list<T> & lista): m_size(lista.m_size){
-			clear();
-			m_head = lista.m_head;
-			m_field = lista.m_field;
-		};
-
-		list & operator=(const list& lista){
-			m_head = lista.m_head;
-			m_field = lista.m_field;
-			m_size = lista.m_size;
-			return *this;
-		}
-
-		// fim [I]
 		// [II] Iterators
 		iterator begin(){
 			iterator ci(m_head);
@@ -166,6 +132,18 @@ class list {
 		}
 		// fim [III]
 		// [IV] Modifiers
+		void clear(){
+			if(m_head == nullptr) return;
+			Node * temp = m_head;
+			while(temp != m_field){
+				delete temp;
+				temp = m_head->next;
+			}
+
+			m_head = nullptr;
+			m_field = nullptr;
+			m_size = 0;
+		}
 		
 		T & front(){
 			if(m_head != nullptr)
@@ -197,32 +175,30 @@ class list {
 		void pop_front(){
 			if(m_head == nullptr) return;
 			Node * temp = m_head->next;
-			delete m_head; //por forças do além o delete não estar funcionando
+			delete m_head; 
 			m_head = temp;
+			m_size--;
 		}
 
 		void pop_back(){
 			if(m_head == nullptr) return;
 			Node * temp = m_field->prev;
-			delete m_field; //por forças do além o delete não estar funcionando
+			delete m_field; 
 			m_field = temp;
+			m_size--;
 		}
 		
 
 		// fim [IV]
 		// [V] modificadores com iterators
 		
-		/*void assign(iterator first, iterator last){
+		void assign(iterator first, iterator last){
 			clear();
-			m_head = first.current;
-			m_field = last.current;
-			int size = 1;
 			while(first != last){
-				first++;
-				size++;
+				first = ++first;
+				push_back((*first).data);
 			}
-			m_size = size;
-		}*/
+		}
 
 		void assign( std::initializer_list<T> ilist ){
 			//clear();
@@ -244,6 +220,34 @@ class list {
 			return nullptr;
 		}
 		// fim [V]
+
+		// [I] membros especiais
+		list(): m_size(0), m_head(nullptr), m_field(nullptr){}
+		~list(){
+			//clear(); // quando rodei o programa ficou num loop infinito
+		}
+
+		list(const list & lista): m_size(lista.m_size){
+			clear();
+			Node * it = lista.m_head; 
+			while(it->next != nullptr){
+				push_back(it->data);
+				it= it->next;
+			}
+			m_field = it;
+		};
+
+		list & operator=(const list & lista){
+			clear();
+			Node * it = lista.m_head; 
+			while(it->next != nullptr){
+				push_back(it->data);
+				it= it->next;
+			}
+			m_field = it;
+		}
+
+		// fim [I]
 	private: 
 		int m_size;
 		Node * m_head;
@@ -257,8 +261,10 @@ int main(int argc, char const *argv[]){
 	lista.push_back(56);
 	lista.push_front(132);
 	
-	sc::list<int> lista2{lista};
-	//lista.clear();
+	sc::list<int> lista2{};
+	
+	lista2.assign(lista.begin(), lista.end());
+
 	cout <<  " = " << lista2.front() << endl; 
 	
 	return 0;
