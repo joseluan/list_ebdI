@@ -1,0 +1,159 @@
+\hypertarget{classsc_1_1list_1_1const__iterator}{}\section{Referência à classe sc\+:\+:list$<$ T $>$\+:\+:const\+\_\+iterator}
+\label{classsc_1_1list_1_1const__iterator}\index{sc\+::list$<$ T $>$\+::const\+\_\+iterator@{sc\+::list$<$ T $>$\+::const\+\_\+iterator}}
+
+
+Diagrama de colaboração para sc\+:\+:list$<$ T $>$\+:\+:const\+\_\+iterator\+:
+% FIG 0
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator_a3b68ca55b3d1330cecc9ae08020022cf}{const\+\_\+iterator} ()\hypertarget{classsc_1_1list_1_1const__iterator_a3b68ca55b3d1330cecc9ae08020022cf}{}\label{classsc_1_1list_1_1const__iterator_a3b68ca55b3d1330cecc9ae08020022cf}
+
+\begin{DoxyCompactList}\small\item\em Contruttor sem argumentos, current = nullptr. \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator_abb42cbfb1699cb7427d9ab8a4d683b92}{const\+\_\+iterator} (Node $\ast$p)
+\begin{DoxyCompactList}\small\item\em Contruttor sem argumentos, data = nullptr. \end{DoxyCompactList}\item 
+const Node \& \hyperlink{classsc_1_1list_1_1const__iterator_a259def20fbe7c24617ce53b96fd5b080}{operator$\ast$} () const 
+\begin{DoxyCompactList}\small\item\em retorna o seu const Node \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \& \hyperlink{classsc_1_1list_1_1const__iterator_a697f3bb58545ee5c3c0d8d821a2d6ccf}{operator++} ()
+\begin{DoxyCompactList}\small\item\em pega o proximo Node // ++it \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \& \hyperlink{classsc_1_1list_1_1const__iterator_ae5f4ee57e2b49f600e54360cd6200dba}{operator++} (int)
+\begin{DoxyCompactList}\small\item\em pega o proximo Node // it++ \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \& \hyperlink{classsc_1_1list_1_1const__iterator_aa400d21a07e6a88cd567754a323f06d8}{operator-\/-\/} ()
+\begin{DoxyCompactList}\small\item\em pega o Node anterior // --it \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \& \hyperlink{classsc_1_1list_1_1const__iterator_a0c91bc7080e1f98d95c61d60fba43c98}{operator-\/-\/} (int)
+\begin{DoxyCompactList}\small\item\em pega o Node anterior // it-- \end{DoxyCompactList}\item 
+bool \hyperlink{classsc_1_1list_1_1const__iterator_af1ec41d1c2cb4faef5e41deaa12df604}{operator==} (const \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} rhs) const 
+\begin{DoxyCompactList}\small\item\em verifica se dois const iterators são iguais \end{DoxyCompactList}\item 
+bool \hyperlink{classsc_1_1list_1_1const__iterator_aecba4f63d3cdcbc8a8627c00b007e7d3}{operator!=} (const \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} rhs) const 
+\begin{DoxyCompactList}\small\item\em verifica se dois const iterators são diferentes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+Node $\ast$ {\bfseries current}\hypertarget{classsc_1_1list_1_1const__iterator_ac8a1ecff3dcc804cd3fabfaf2360d461}{}\label{classsc_1_1list_1_1const__iterator_ac8a1ecff3dcc804cd3fabfaf2360d461}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator(\+Node $\ast$p)}{const_iterator(Node *p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::const\+\_\+iterator (
+\begin{DoxyParamCaption}
+\item[{Node $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_abb42cbfb1699cb7427d9ab8a4d683b92}{}\label{classsc_1_1list_1_1const__iterator_abb42cbfb1699cb7427d9ab8a4d683b92}
+
+
+Contruttor sem argumentos, data = nullptr. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em p} & é seu current \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentação dos métodos}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator"!=(const const\+\_\+iterator rhs) const }{operator!=(const const_iterator rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf const\+\_\+iterator}}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_aecba4f63d3cdcbc8a8627c00b007e7d3}{}\label{classsc_1_1list_1_1const__iterator_aecba4f63d3cdcbc8a8627c00b007e7d3}
+
+
+verifica se dois const iterators são diferentes 
+
+\begin{DoxyReturn}{Retorna}
+booleano 
+\end{DoxyReturn}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator$\ast$() const }{operator*() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const Node\& {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_a259def20fbe7c24617ce53b96fd5b080}{}\label{classsc_1_1list_1_1const__iterator_a259def20fbe7c24617ce53b96fd5b080}
+
+
+retorna o seu const Node 
+
+\begin{DoxyReturn}{Retorna}
+const Node 
+\end{DoxyReturn}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator++()}{operator++()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator}\& {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_a697f3bb58545ee5c3c0d8d821a2d6ccf}{}\label{classsc_1_1list_1_1const__iterator_a697f3bb58545ee5c3c0d8d821a2d6ccf}
+
+
+pega o proximo Node // ++it 
+
+\begin{DoxyReturn}{Retorna}
+const iterator 
+\end{DoxyReturn}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator++(int)}{operator++(int)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator}\& {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_ae5f4ee57e2b49f600e54360cd6200dba}{}\label{classsc_1_1list_1_1const__iterator_ae5f4ee57e2b49f600e54360cd6200dba}
+
+
+pega o proximo Node // it++ 
+
+\begin{DoxyReturn}{Retorna}
+const iterator 
+\end{DoxyReturn}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator-\/-\/()}{operator--()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator}\& {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_aa400d21a07e6a88cd567754a323f06d8}{}\label{classsc_1_1list_1_1const__iterator_aa400d21a07e6a88cd567754a323f06d8}
+
+
+pega o Node anterior // --it 
+
+\begin{DoxyReturn}{Retorna}
+const iterator 
+\end{DoxyReturn}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator-\/-\/(int)}{operator--(int)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator}\& {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_a0c91bc7080e1f98d95c61d60fba43c98}{}\label{classsc_1_1list_1_1const__iterator_a0c91bc7080e1f98d95c61d60fba43c98}
+
+
+pega o Node anterior // it-- 
+
+\begin{DoxyReturn}{Retorna}
+const iterator 
+\end{DoxyReturn}
+\index{sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!sc\+::list\+::const\+\_\+iterator@{sc\+::list\+::const\+\_\+iterator}}
+\subsubsection[{\texorpdfstring{operator==(const const\+\_\+iterator rhs) const }{operator==(const const_iterator rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf sc\+::list}$<$ T $>$\+::const\+\_\+iterator\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf const\+\_\+iterator}}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_1_1const__iterator_af1ec41d1c2cb4faef5e41deaa12df604}{}\label{classsc_1_1list_1_1const__iterator_af1ec41d1c2cb4faef5e41deaa12df604}
+
+
+verifica se dois const iterators são iguais 
+
+\begin{DoxyReturn}{Retorna}
+booleano 
+\end{DoxyReturn}
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{list_8h}{list.\+h}\end{DoxyCompactItemize}

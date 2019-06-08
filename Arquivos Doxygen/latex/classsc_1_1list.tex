@@ -1,0 +1,367 @@
+\hypertarget{classsc_1_1list}{}\section{Referência à classe Template sc\+:\+:list$<$ T $>$}
+\label{classsc_1_1list}\index{sc\+::list$<$ T $>$@{sc\+::list$<$ T $>$}}
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}
+\item 
+class \hyperlink{classsc_1_1list_1_1iterator}{iterator}
+\end{DoxyCompactItemize}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a2fa015e137583d7142933500b34f1e29}{begin} ()
+\begin{DoxyCompactList}\small\item\em iterator do começo do list \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_a8141d9041c0b76a71d6ff8103f31c517}{cbegin} () const 
+\begin{DoxyCompactList}\small\item\em const iterator do começo do list \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a48429f0cf3d990fa6dfd5140e6aa95a7}{end} ()
+\begin{DoxyCompactList}\small\item\em iterator do fim do list \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_aec5075e0ac046fe4e28cb2bb286c96ec}{cend} () const 
+\begin{DoxyCompactList}\small\item\em const iterator do fim do list \end{DoxyCompactList}\item 
+int \hyperlink{classsc_1_1list_aee0e60e25f8a119956ab55cf126a8cf2}{size} () const 
+\begin{DoxyCompactList}\small\item\em tamanho do list \end{DoxyCompactList}\item 
+bool \hyperlink{classsc_1_1list_a1a75c788813cbdccd99af6058ed9f35f}{empty} () const 
+\begin{DoxyCompactList}\small\item\em verifica se o list possui elementos \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_aece86319a40d15b88fd1a981ba1a226e}{clear} ()\hypertarget{classsc_1_1list_aece86319a40d15b88fd1a981ba1a226e}{}\label{classsc_1_1list_aece86319a40d15b88fd1a981ba1a226e}
+
+\begin{DoxyCompactList}\small\item\em remove todos os Node do list \end{DoxyCompactList}\item 
+T \& \hyperlink{classsc_1_1list_af4e92039ed6cfe0a4137397a5a1226b2}{front} ()
+\begin{DoxyCompactList}\small\item\em primeiro valor do list \end{DoxyCompactList}\item 
+T \& \hyperlink{classsc_1_1list_a5c3298ec08c16141dcc73425e6b3ad18}{back} ()
+\begin{DoxyCompactList}\small\item\em ultimo valor do list \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_a1d77cdaeacca7959989873617a753c96}{push\+\_\+back} (const T \&value)
+\begin{DoxyCompactList}\small\item\em adiociona um Node do final do list (fica meio estranho quando faz o psuh, ele fica esperando algo...) \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_a24a7b8a81765dfe0351ddb263bc6d754}{push\+\_\+front} (const T \&value)
+\begin{DoxyCompactList}\small\item\em adiociona um Node do começo do list (pode dar erro quando der mais de 2 push) \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_ab3fbf66643f4356cf0c1947bd4fdf48e}{pop\+\_\+front} ()\hypertarget{classsc_1_1list_ab3fbf66643f4356cf0c1947bd4fdf48e}{}\label{classsc_1_1list_ab3fbf66643f4356cf0c1947bd4fdf48e}
+
+\begin{DoxyCompactList}\small\item\em remove um Node do começo do list \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_a3d6fc0a4f2c1db7c74af5a482c1a03ca}{pop\+\_\+back} ()\hypertarget{classsc_1_1list_a3d6fc0a4f2c1db7c74af5a482c1a03ca}{}\label{classsc_1_1list_a3d6fc0a4f2c1db7c74af5a482c1a03ca}
+
+\begin{DoxyCompactList}\small\item\em remove um Node do final do list \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_ab30166ee75b611d9c935865f43c5fa69}{assign} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} first, \hyperlink{classsc_1_1list_1_1iterator}{iterator} last)
+\begin{DoxyCompactList}\small\item\em recria o list apartir de dois Iterator \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_a495ac9f4a80b40ba7d37e6badf24445f}{assign} (std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\begin{DoxyCompactList}\small\item\em recria o list para seus dados serem iguais a uma lista fornecida \end{DoxyCompactList}\item 
+void \hyperlink{classsc_1_1list_a1e4e7bb73cb4f1e00cc4eed40ef326d2}{assign} (int \hyperlink{classsc_1_1list_aee0e60e25f8a119956ab55cf126a8cf2}{size}, const T \&value)
+\begin{DoxyCompactList}\small\item\em recria o list para ter somente size Nodes com o valor de value \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a2dd7a74a6b6cfb7e54f61de938161d75}{erase} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} itr)
+\begin{DoxyCompactList}\small\item\em apaga um Node do list \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_ae796301c82f58d72d10ec7c30fb0b024}{erase} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} first, \hyperlink{classsc_1_1list_1_1iterator}{iterator} last)
+\begin{DoxyCompactList}\small\item\em remove uma de dados, apartir de dois iterators \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_aeaffe3f5ad8090546b9ee5c593077e3c}{find} (const T \&value) const 
+\begin{DoxyCompactList}\small\item\em proucura um Node apartir de um valor \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_ac7b95807230114dc58f2b1156cb3cdba}{list} ()\hypertarget{classsc_1_1list_ac7b95807230114dc58f2b1156cb3cdba}{}\label{classsc_1_1list_ac7b95807230114dc58f2b1156cb3cdba}
+
+\begin{DoxyCompactList}\small\item\em construtor iniciando com 0 Nodes \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_a3399256b9e2fa57bee383c2421722214}{$\sim$list} ()\hypertarget{classsc_1_1list_a3399256b9e2fa57bee383c2421722214}{}\label{classsc_1_1list_a3399256b9e2fa57bee383c2421722214}
+
+\begin{DoxyCompactList}\small\item\em desconstrutor destroi os dados do list (deveria funcionar) \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list_a0712a89d52ceeca3b70d52f6f9553308}{list} (const \hyperlink{classsc_1_1list}{list} \&source)
+\begin{DoxyCompactList}\small\item\em construtor iniciando com os mesmos valores de outro list \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list}{list} \& \hyperlink{classsc_1_1list_a63201ad5d5dce5a22275cafcd85e22f8}{operator=} (const \hyperlink{classsc_1_1list}{list} \&source)
+\begin{DoxyCompactList}\small\item\em copia um list para outro list \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\index{sc\+::list@{sc\+::list}!list@{list}}
+\index{list@{list}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{list(const list \&source)}{list(const list &source)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf sc\+::list}$<$ T $>$\+::{\bf list} (
+\begin{DoxyParamCaption}
+\item[{const {\bf list}$<$ T $>$ \&}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a0712a89d52ceeca3b70d52f6f9553308}{}\label{classsc_1_1list_a0712a89d52ceeca3b70d52f6f9553308}
+
+
+construtor iniciando com os mesmos valores de outro list 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em source} & list a ser copiado \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentação dos métodos}
+\index{sc\+::list@{sc\+::list}!assign@{assign}}
+\index{assign@{assign}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{assign(iterator first, iterator last)}{assign(iterator first, iterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf sc\+::list}$<$ T $>$\+::assign (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator}}]{first, }
+\item[{{\bf iterator}}]{last}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_ab30166ee75b611d9c935865f43c5fa69}{}\label{classsc_1_1list_ab30166ee75b611d9c935865f43c5fa69}
+
+
+recria o list apartir de dois Iterator 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em first} & começo da lista a ser copiada \\
+\hline
+{\em last} & sucessor do fim da lista a ser copiada \\
+\hline
+\end{DoxyParams}
+\index{sc\+::list@{sc\+::list}!assign@{assign}}
+\index{assign@{assign}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{assign(std\+::initializer\+\_\+list$<$ T $>$ ilist)}{assign(std::initializer_list< T > ilist)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf sc\+::list}$<$ T $>$\+::assign (
+\begin{DoxyParamCaption}
+\item[{std\+::initializer\+\_\+list$<$ T $>$}]{ilist}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a495ac9f4a80b40ba7d37e6badf24445f}{}\label{classsc_1_1list_a495ac9f4a80b40ba7d37e6badf24445f}
+
+
+recria o list para seus dados serem iguais a uma lista fornecida 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & lista a ser igual a os dados do vector \\
+\hline
+\end{DoxyParams}
+\index{sc\+::list@{sc\+::list}!assign@{assign}}
+\index{assign@{assign}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{assign(int size, const T \&value)}{assign(int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf sc\+::list}$<$ T $>$\+::assign (
+\begin{DoxyParamCaption}
+\item[{int}]{size, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a1e4e7bb73cb4f1e00cc4eed40ef326d2}{}\label{classsc_1_1list_a1e4e7bb73cb4f1e00cc4eed40ef326d2}
+
+
+recria o list para ter somente size Nodes com o valor de value 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em size} & quantidade de vezes qie value será copiado \\
+\hline
+{\em value} & valor do Node \\
+\hline
+\end{DoxyParams}
+\index{sc\+::list@{sc\+::list}!back@{back}}
+\index{back@{back}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{back()}{back()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T\& {\bf sc\+::list}$<$ T $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a5c3298ec08c16141dcc73425e6b3ad18}{}\label{classsc_1_1list_a5c3298ec08c16141dcc73425e6b3ad18}
+
+
+ultimo valor do list 
+
+\begin{DoxyReturn}{Retorna}
+uma referencia para o ultimo valor do list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!begin@{begin}}
+\index{begin@{begin}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{begin()}{begin()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf iterator} {\bf sc\+::list}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a2fa015e137583d7142933500b34f1e29}{}\label{classsc_1_1list_a2fa015e137583d7142933500b34f1e29}
+
+
+iterator do começo do list 
+
+\begin{DoxyReturn}{Retorna}
+um iterator para o começo do list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{cbegin() const }{cbegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator} {\bf sc\+::list}$<$ T $>$\+::cbegin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a8141d9041c0b76a71d6ff8103f31c517}{}\label{classsc_1_1list_a8141d9041c0b76a71d6ff8103f31c517}
+
+
+const iterator do começo do list 
+
+\begin{DoxyReturn}{Retorna}
+um const iterator para o começo do list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!cend@{cend}}
+\index{cend@{cend}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{cend() const }{cend() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator} {\bf sc\+::list}$<$ T $>$\+::cend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_aec5075e0ac046fe4e28cb2bb286c96ec}{}\label{classsc_1_1list_aec5075e0ac046fe4e28cb2bb286c96ec}
+
+
+const iterator do fim do list 
+
+\begin{DoxyReturn}{Retorna}
+um const iterator para o final do list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!empty@{empty}}
+\index{empty@{empty}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{empty() const }{empty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf sc\+::list}$<$ T $>$\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a1a75c788813cbdccd99af6058ed9f35f}{}\label{classsc_1_1list_a1a75c788813cbdccd99af6058ed9f35f}
+
+
+verifica se o list possui elementos 
+
+\begin{DoxyReturn}{Retorna}
+true caso o list estaja vazio, e false caso contrario 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!end@{end}}
+\index{end@{end}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{end()}{end()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf iterator} {\bf sc\+::list}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a48429f0cf3d990fa6dfd5140e6aa95a7}{}\label{classsc_1_1list_a48429f0cf3d990fa6dfd5140e6aa95a7}
+
+
+iterator do fim do list 
+
+\begin{DoxyReturn}{Retorna}
+um iterator para o final do list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!erase@{erase}}
+\index{erase@{erase}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{erase(iterator itr)}{erase(iterator itr)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf iterator} {\bf sc\+::list}$<$ T $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator}}]{itr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a2dd7a74a6b6cfb7e54f61de938161d75}{}\label{classsc_1_1list_a2dd7a74a6b6cfb7e54f61de938161d75}
+
+
+apaga um Node do list 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em it} & iterator a ser apagado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+um iterator para o local onde o dado foi removido 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!erase@{erase}}
+\index{erase@{erase}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{erase(iterator first, iterator last)}{erase(iterator first, iterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf iterator} {\bf sc\+::list}$<$ T $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator}}]{first, }
+\item[{{\bf iterator}}]{last}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_ae796301c82f58d72d10ec7c30fb0b024}{}\label{classsc_1_1list_ae796301c82f58d72d10ec7c30fb0b024}
+
+
+remove uma de dados, apartir de dois iterators 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em first} & começo da sequencia de dados \\
+\hline
+{\em last} & o posterior ao fim da sequencia de dados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+um iterator para o local onde o dado foi removido 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!find@{find}}
+\index{find@{find}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{find(const T \&value) const }{find(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf const\+\_\+iterator} {\bf sc\+::list}$<$ T $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_aeaffe3f5ad8090546b9ee5c593077e3c}{}\label{classsc_1_1list_aeaffe3f5ad8090546b9ee5c593077e3c}
+
+
+proucura um Node apartir de um valor 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & valor do Node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+um const iterator do Node encontrado 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!front@{front}}
+\index{front@{front}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{front()}{front()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T\& {\bf sc\+::list}$<$ T $>$\+::front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_af4e92039ed6cfe0a4137397a5a1226b2}{}\label{classsc_1_1list_af4e92039ed6cfe0a4137397a5a1226b2}
+
+
+primeiro valor do list 
+
+\begin{DoxyReturn}{Retorna}
+uma referencia para o primeiro valor do list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!operator=@{operator=}}
+\index{operator=@{operator=}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{operator=(const list \&source)}{operator=(const list &source)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf list}\& {\bf sc\+::list}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf list}$<$ T $>$ \&}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a63201ad5d5dce5a22275cafcd85e22f8}{}\label{classsc_1_1list_a63201ad5d5dce5a22275cafcd85e22f8}
+
+
+copia um list para outro list 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em source} & list a ser copiado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+uma referencia para list 
+\end{DoxyReturn}
+\index{sc\+::list@{sc\+::list}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{push\+\_\+back(const T \&value)}{push_back(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf sc\+::list}$<$ T $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a1d77cdaeacca7959989873617a753c96}{}\label{classsc_1_1list_a1d77cdaeacca7959989873617a753c96}
+
+
+adiociona um Node do final do list (fica meio estranho quando faz o psuh, ele fica esperando algo...) 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & valor do Node a ser inserido \\
+\hline
+\end{DoxyParams}
+\index{sc\+::list@{sc\+::list}!push\+\_\+front@{push\+\_\+front}}
+\index{push\+\_\+front@{push\+\_\+front}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{push\+\_\+front(const T \&value)}{push_front(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf sc\+::list}$<$ T $>$\+::push\+\_\+front (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_a24a7b8a81765dfe0351ddb263bc6d754}{}\label{classsc_1_1list_a24a7b8a81765dfe0351ddb263bc6d754}
+
+
+adiociona um Node do começo do list (pode dar erro quando der mais de 2 push) 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & valor do Node a ser inserido \\
+\hline
+\end{DoxyParams}
+\index{sc\+::list@{sc\+::list}!size@{size}}
+\index{size@{size}!sc\+::list@{sc\+::list}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf sc\+::list}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classsc_1_1list_aee0e60e25f8a119956ab55cf126a8cf2}{}\label{classsc_1_1list_aee0e60e25f8a119956ab55cf126a8cf2}
+
+
+tamanho do list 
+
+\begin{DoxyReturn}{Retorna}
+quantidade de Node do list 
+\end{DoxyReturn}
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{list_8h}{list.\+h}\end{DoxyCompactItemize}

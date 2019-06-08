@@ -267,36 +267,43 @@ class list {
 		}
 
 		/**
-        * @brief adiociona um Node do final do list
+        * @brief adiociona um Node do final do list (fica meio estranho quando faz o psuh, ele fica esperando algo...)
         * @param value valor do Node a ser inserido
         */
 		void push_back(const T & value){
-			//Node * temp = new Node(value, m_field);
-			Node * temp = m_field;
-
-			if(m_head == nullptr){
-				m_field = new Node(value, temp);
-				m_head = new Node(value, nullptr, m_field);
+			Node * n = new Node{value};
+			if(m_head == nullptr && m_field == nullptr){
+				m_head = n;
+				m_field = n;
+			}else if(m_head == m_field){
+				m_field = n;
+				m_field->prev = m_head;
+				m_head->next = m_field;
 			}else{
-				//Node * temp2 = m_field;
-				//m_field = new Node{};
-				//temp2->next = m_field;
+				m_field->next = n;
+				n->prev = m_field;
+				m_field = n;
 			}
-
-			m_size++;
 		}
 
 		/**
-        * @brief adiociona um Node do começo do list
+        * @brief adiociona um Node do começo do list (pode dar erro quando der mais de 2 push)
         * @param value valor do Node a ser inserido
         */
 		void push_front(const T & value){
-			Node * temp = new Node(value, nullptr, m_head);
-			m_head->prev = temp;
-			m_head = temp;
- 			if(m_field == nullptr)
-				m_field = temp;
-			m_size++;
+			Node * n = new Node{value};
+			if(m_head == nullptr && m_field == nullptr){
+				m_head = n;
+				m_field = n;
+			}else if(m_head == m_field){
+				m_head = n;
+				m_head->prev = m_field;
+				m_field->next = m_head;
+			}else{
+				m_head->prev = n;
+				n->next = m_head;
+				m_head = n;
+			}
 		}
 
 		/**
